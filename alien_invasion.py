@@ -3,7 +3,7 @@ import sys
 
 import pygame
 
-from settings import Settings
+from ship import Ship
 
 def run_game():
     # Initialize game, settings, and screen object
@@ -13,6 +13,9 @@ def run_game():
 
     # Set the background colour
     bg_colour = (150, 170, 230) # In pygame colours are RGB ranging from 0 to 255, (255, 0, 0) is red.
+
+    # Make ship
+    ship = Ship(screen)
 
 
     # Start the main loop for the game.
@@ -25,10 +28,13 @@ def run_game():
 
         # Redraw the screen during each pass through the loop.Fill the screen with bg colour
         screen.fill(bg_colour)
+        ship.blitme()
 
         # Make the most recently drawn screen visible.
         pygame.display.flip()
 
 run_game()  # Initializes the game and starts the main loop
+
+
 
 
